@@ -1,1 +1,4 @@
 target/
+.idea/
+audit_db/
+*.log
