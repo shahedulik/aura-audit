@@ -28,7 +28,7 @@
           openssl
           llvmPackages.libclang.dev
           
-          # FIX: Use GCC 13 instead of GCC 15 for kuzu compatibility
+          # FIX: Explicitly use GCC 13 for kuzu compatibility
           gcc13
         ];
 
@@ -44,7 +44,7 @@
           export CMAKE_PREFIX_PATH="${pkgs.arrow-cpp}/lib/cmake/Arrow:$CMAKE_PREFIX_PATH"
           export PKG_CONFIG_PATH="${pkgs.openssl.out}/lib/pkgconfig:$PKG_CONFIG_PATH"
           
-          # Ensure GCC 13 is used as the default compiler
+          # FORCE GCC 13 as the default compiler
           export CC="${pkgs.gcc13}/bin/gcc"
           export CXX="${pkgs.gcc13}/bin/g++"
           
